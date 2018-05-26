@@ -9,7 +9,9 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "cypress:open": "concurrently \"ng serve\" \"cypress open\"",
-    "cypress:ci": "cypress run"
+    "cypress:run": "cypress run",
+    "cypress:ci": "ng build && run-p --race start:ci cypress:run",
+    "start:ci": "http-server ./dist/cypressTest -a localhost -p 8000 -c-1"
   },
   "private": true,
   "dependencies": {
@@ -24,6 +26,8 @@
     "@angular/router": "^6.0.0",
     "concurrently": "^3.5.1",
     "core-js": "^2.5.4",
+    "http-server": "^0.11.1",
+    "npm-run-all": "^4.1.3",
     "rxjs": "^6.0.0",
     "zone.js": "^0.8.26"
   },

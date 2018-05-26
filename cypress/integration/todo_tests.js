@@ -1,6 +1,6 @@
 describe('My First Test', () => {
   beforeEach(function() {
-    cy.visit('http://localhost:4200');
+    cy.visit('http://localhost:8000');
     cy.get('#addtodobutton').as('addtodobutton');
     cy.get('#todoinput').as('todoinput');
     cy.get('#todolist').as('todolist');
