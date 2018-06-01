@@ -10,7 +10,7 @@
     "e2e": "ng e2e",
     "cypress:open": "concurrently \"ng serve\" \"cypress open\"",
     "cypress:run": "cypress run",
-    "cypress:ci": "ng build && run-p --race start:ci cypress:run",
+    "cypress:ci": "ng build --prod && run-p --race start:ci cypress:run",
     "start:ci": "http-server ./dist/cypressTest -a localhost -p 8000 -c-1"
   },
   "private": true,
